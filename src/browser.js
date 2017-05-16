@@ -113,8 +113,8 @@ var browser = (function (util, proxies, sanedomparsererror, theWindow) {
 
     var calculateContentSize = function (rootElement, selector, requestedWidth, requestedHeight, zoom) {
         // clientWidth/clientHeight needed for PhantomJS
-        var actualViewportWidth = Math.max(rootElement.scrollWidth, rootElement.clientWidth),
-            actualViewportHeight = Math.max(rootElement.scrollHeight, rootElement.clientHeight),
+        var actualViewportWidth = Math.min(rootElement.scrollWidth, rootElement.clientWidth),
+            actualViewportHeight = Math.min(rootElement.scrollHeight, rootElement.clientHeight),
             top, left, originalWidth, originalHeight, rootFontSize,
             element, rect, contentSize;
 
