@@ -198,13 +198,12 @@ module.exports = function (grunt) {
         'umd',
         'concat:dist',
         'browserify:allinone',
-        'uglify'
+        // 'uglify'
     ]);
 
     grunt.registerTask('default', [
         'clean',
         'deps',
-        'test',
         'build'
     ]);
 
